@@ -30,10 +30,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     /** 快速创建标签栏 方法一 */
-//    [self tabBarConfig];
-
+    //    [self tabBarConfig];
+    
     
     
     /** 自定义多样化标签栏 方法二 */
@@ -115,7 +115,7 @@
     for (int i = 0; i < imgs.count; i ++) {
         
         TabBarBtn *btn = [TabBarBtn buttonWithType:UIButtonTypeCustom];
-
+        
         CGFloat weight = MAIN_WIDTH/2;
         [btn setTitle:titleArr[i] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:imgs[i]] forState:UIControlStateNormal];
@@ -157,7 +157,7 @@
     TabBarBtn *btn1 = (TabBarBtn *)[self.view viewWithTag:kTabBtnTag + 1];
     
     // 添加角标
-    btn0.sj_numTabStr = @"12";
+    btn0.sj_tabNum = 12;
     btn0.sj_rightOfSet = 40;
     btn0.sj_topOfSet = 0;
     btn0.sj_backColor = [UIColor lightGrayColor];
@@ -165,7 +165,7 @@
     btn0.sj_tabUserInteractionEnabled = YES;
     
     // 添加角标
-    btn1.sj_numTabStr = @"9";
+    btn1.sj_tabNum = 9;
     btn1.sj_rightOfSet = 40;
     btn1.sj_topOfSet = 0;
     btn1.sj_tabUserInteractionEnabled = YES;

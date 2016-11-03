@@ -17,7 +17,7 @@
 @property (nonatomic ,readwrite) BOOL sj_tabUserInteractionEnabled;
 
 /** 标签显示数 */
-@property (nonatomic ,copy)  NSString * sj_numTabStr;
+@property (nonatomic ,assign) NSInteger sj_tabNum;
 
 /** 标签右边距 */
 @property (nonatomic ,assign) CGFloat   sj_rightOfSet;

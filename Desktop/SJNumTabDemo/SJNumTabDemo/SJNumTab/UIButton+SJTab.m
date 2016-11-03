@@ -61,7 +61,7 @@ static const void *numTabStrKey = &numTabStrKey;
 
 - (void)setSj_rightOfSet:(CGFloat)sj_rightOfSet{
     objc_setAssociatedObject(self, rightOfSetKey, @(sj_rightOfSet), OBJC_ASSOCIATION_ASSIGN);
-//    self.transform = CGAffineTransformMakeScale(rightOfSet, rightOfSet);
+    //    self.transform = CGAffineTransformMakeScale(rightOfSet, rightOfSet);
     [self showNumTab];
 }
 
@@ -73,7 +73,7 @@ static const void *numTabStrKey = &numTabStrKey;
 
 - (void)setSj_topOfSet:(CGFloat)sj_topOfSet{
     objc_setAssociatedObject(self, topOfSetKey, @(sj_topOfSet), OBJC_ASSOCIATION_ASSIGN);
-//    self.transform = CGAffineTransformMakeScale(topOfSet, topOfSet);
+    //    self.transform = CGAffineTransformMakeScale(topOfSet, topOfSet);
     [self showNumTab];
 }
 
@@ -107,13 +107,14 @@ static const void *numTabStrKey = &numTabStrKey;
     [self showNumTab];
 }
 
-#pragma mark - numTabStr
-- (NSString *)sj_numTabStr{
-    return objc_getAssociatedObject(self, numTabStrKey);
+#pragma mark - tanNum
+- (NSInteger)sj_tabNum{
+    NSNumber * tabNum = objc_getAssociatedObject(self, numTabStrKey);
+    return tabNum.integerValue;
 }
 
-- (void)setSj_numTabStr:(NSString *)sj_numTabStr{
-    objc_setAssociatedObject(self, numTabStrKey, sj_numTabStr, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setSj_tabNum:(NSInteger)setSj_tabNum{
+    objc_setAssociatedObject(self, numTabStrKey, @(setSj_tabNum), OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self showNumTab];
 }
 
@@ -136,7 +137,7 @@ static const void *numTabStrKey = &numTabStrKey;
 - (void)showNumTab{
     
     // 等于0时 销毁
-    if (self.sj_numTabStr.integerValue == 0) {
+    if (self.sj_tabNum == 0) {
         [self.numTab btnRemoveClick];
         return;
     }
@@ -156,11 +157,11 @@ static const void *numTabStrKey = &numTabStrKey;
     self.numTab.titleLabel.font = [UIFont systemFontOfSize:numFont];
     
     // 限制numTab长度
-    CGSize size = self.sj_numTabStr.integerValue > 999?sizeMax:[self getTextSizeBy:self.numTab.titleLabel.font withText:self.sj_numTabStr withWight:0];
+    CGSize size = self.sj_tabNum > 999?sizeMax:[self getTextSizeBy:self.numTab.titleLabel.font withText:[NSString stringWithFormat:@"%ld",self.sj_tabNum] withWight:0];
     CGFloat defaultHeight = sizeMin.width + 10;
     
     
-    if (self.sj_numTabStr.integerValue < 10) {  // 个位数取圆
+    if (self.sj_tabNum < 10) {  // 个位数取圆
         self.numTab.frame = CGRectMake(0, 0, defaultHeight, defaultHeight);
     }else{
         self.numTab.frame = CGRectMake(0, 0, size.width+10, defaultHeight);
@@ -178,7 +179,7 @@ static const void *numTabStrKey = &numTabStrKey;
     [self.numTab setTitleColor:(self.sj_numColor?self.sj_numColor:numColorDefault) forState:UIControlStateNormal];
     
     // 控制显示内容长度
-    [self.numTab setTitle:(self.sj_numTabStr.integerValue > 999?@"···":self.sj_numTabStr) forState:UIControlStateNormal];
+    [self.numTab setTitle:(self.sj_tabNum > 999?@"···":[NSString stringWithFormat:@"%ld",self.sj_tabNum]) forState:UIControlStateNormal];
     
     // numtab可操作性
     [self.numTab cancelTap:self.sj_tabUserInteractionEnabled];
