@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F446E1581DCE3E2E004608BD /* UIView+SJTab.m in Sources */ = {isa = PBXBuildFile; fileRef = F446E1571DCE3E2E004608BD /* UIView+SJTab.m */; };
 		F47A60561DCA5DA000D12023 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F47A60551DCA5DA000D12023 /* main.m */; };
 		F47A60591DCA5DA000D12023 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F47A60581DCA5DA000D12023 /* AppDelegate.m */; };
 		F47A605C1DCA5DA000D12023 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47A605B1DCA5DA000D12023 /* ViewController.m */; };
@@ -51,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F446E1561DCE3E2E004608BD /* UIView+SJTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SJTab.h"; sourceTree = "<group>"; };
+		F446E1571DCE3E2E004608BD /* UIView+SJTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SJTab.m"; sourceTree = "<group>"; };
 		F47A60511DCA5DA000D12023 /* SJNumTabDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SJNumTabDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47A60551DCA5DA000D12023 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F47A60571DCA5DA000D12023 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,16 +145,16 @@
 				F47A60AF1DCA608F00D12023 /* SJNumTab */,
 				F47A60571DCA5DA000D12023 /* AppDelegate.h */,
 				F47A60581DCA5DA000D12023 /* AppDelegate.m */,
+				F47A608B1DCA5DD900D12023 /* TabBarBtn.h */,
+				F47A608C1DCA5DD900D12023 /* TabBarBtn.m */,
+				F47A608D1DCA5DD900D12023 /* TabBarController.h */,
+				F47A608E1DCA5DD900D12023 /* TabBarController.m */,
 				F47A605A1DCA5DA000D12023 /* ViewController.h */,
 				F47A605B1DCA5DA000D12023 /* ViewController.m */,
 				F47A60871DCA5DD900D12023 /* SubViewController.h */,
 				F47A60881DCA5DD900D12023 /* SubViewController.m */,
 				F47A60891DCA5DD900D12023 /* SumViewController.h */,
 				F47A608A1DCA5DD900D12023 /* SumViewController.m */,
-				F47A608B1DCA5DD900D12023 /* TabBarBtn.h */,
-				F47A608C1DCA5DD900D12023 /* TabBarBtn.m */,
-				F47A608D1DCA5DD900D12023 /* TabBarController.h */,
-				F47A608E1DCA5DD900D12023 /* TabBarController.m */,
 				F47A605D1DCA5DA000D12023 /* Main.storyboard */,
 				F47A60601DCA5DA000D12023 /* Assets.xcassets */,
 				F47A60621DCA5DA000D12023 /* LaunchScreen.storyboard */,
@@ -195,6 +198,8 @@
 				F47A60BC1DCA608F00D12023 /* SJTabButton.m */,
 				F47A60BD1DCA608F00D12023 /* UIButton+SJTab.h */,
 				F47A60BE1DCA608F00D12023 /* UIButton+SJTab.m */,
+				F446E1561DCE3E2E004608BD /* UIView+SJTab.h */,
+				F446E1571DCE3E2E004608BD /* UIView+SJTab.m */,
 			);
 			path = SJNumTab;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				F47A60C91DCA608F00D12023 /* SJTabButton.m in Sources */,
 				F47A60921DCA5DD900D12023 /* TabBarController.m in Sources */,
 				F47A605C1DCA5DA000D12023 /* ViewController.m in Sources */,
+				F446E1581DCE3E2E004608BD /* UIView+SJTab.m in Sources */,
 				F47A60591DCA5DA000D12023 /* AppDelegate.m in Sources */,
 				F47A60911DCA5DD900D12023 /* TabBarBtn.m in Sources */,
 				F47A60901DCA5DD900D12023 /* SumViewController.m in Sources */,

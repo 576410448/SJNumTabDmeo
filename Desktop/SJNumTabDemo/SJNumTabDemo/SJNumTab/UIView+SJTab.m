@@ -11,8 +11,8 @@
 # define sizeMax [self getTextSizeBy:[UIFont systemFontOfSize:numFont] withText:@"999" withWight:0]
 
 
-# define rightOfSetDefault 5
-# define topOfSetDefault 2
+# define rightOfSetDefault 0
+# define topOfSetDefault 0
 # define backColorDefault [UIColor redColor]
 # define numColorDefault [UIColor whiteColor]
 
@@ -31,7 +31,7 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 
-@implementation UIButton (SJTab)
+@implementation UIView (SJTab)
 
 static const void *tabUserInteractionEnabledKey = &tabUserInteractionEnabledKey;
 static const void *rightOfSetKey = &rightOfSetKey;

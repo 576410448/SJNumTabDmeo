@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SumViewController.h"
+#import "UIView+SJTab.h"
 
 @interface ViewController ()
 
@@ -23,6 +24,8 @@
     self.navigationItem.title = @"item1";
     
     [self createRightBarButton];
+    
+    [self createTabView];
 }
 
 - (void)createRightBarButton{
@@ -42,5 +45,21 @@
     
 }
 
+- (void)createTabView{
+    
+    UIView *tabView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 80)];
+    [self.view addSubview:tabView];
+    
+    tabView.layer.borderWidth = 1;
+    
+    // 添加角标
+    tabView.sj_tabNum = 12;
+    tabView.sj_rightOfSet = 20;
+    tabView.sj_topOfSet = 32;
+    tabView.sj_backColor = [UIColor lightGrayColor];
+    tabView.sj_numColor = [UIColor blackColor];
+    tabView.sj_tabUserInteractionEnabled = YES;
+    
+}
 
 @end
