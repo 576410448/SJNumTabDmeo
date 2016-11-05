@@ -1,5 +1,8 @@
 # SJNumTabDmeo
+
 导入UIButton+SJTab，实例化btn调用sj_**属性
+
+此处仅以UIButton的category为例写的，其他很多控件都可实现
 
 ## 使用：
 
