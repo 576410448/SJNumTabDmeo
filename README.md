@@ -20,6 +20,12 @@
 
 7. btn.sj_numColor 角标字体颜色（默认颜色白色）
 
+## 新增Tab移除 Block回调
+
+[btn setSj_tabRemoveEventBlock:^{
+    // 移除的时候调用接口清空数据
+}];
+
 实现内容参考 https://github.com/ZhongTaoTian/QQBtn
 
 图片度娘找的。。。将就将就，还不会弄GIF图，类似这种效果

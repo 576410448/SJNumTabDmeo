@@ -15,6 +15,9 @@ typedef void (^Sj_tabRemoveEventBlock)();
 
 @property (nonatomic ,strong ,readonly) SJTabButton *numTab;
 
+/**移除回调*/
+@property (nonatomic ,copy) Sj_tabRemoveEventBlock sj_tabRemoveEventBlock;
+
 /** 标签是否支持操作 */
 @property (nonatomic ,readwrite) BOOL sj_tabUserInteractionEnabled;
 
@@ -32,9 +35,6 @@ typedef void (^Sj_tabRemoveEventBlock)();
 
 /** 标签字体色 */
 @property (nonatomic ,retain) UIColor * sj_numColor;
-
-/**移除回调*/
-@property (nonatomic ,copy) Sj_tabRemoveEventBlock sj_tabRemoveEventBlock;
 
 
 @end
