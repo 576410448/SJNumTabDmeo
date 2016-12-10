@@ -116,6 +116,11 @@
         
         TabBarBtn *btn = [TabBarBtn buttonWithType:UIButtonTypeCustom];
         
+        __weak typeof(btn) weakBtn = btn;
+        [weakBtn setSj_tabRemoveEventBlock:^{
+            weakBtn.sj_tabNum = 0;
+        }];
+        
         CGFloat weight = MAIN_WIDTH/2;
         [btn setTitle:titleArr[i] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:imgs[i]] forState:UIControlStateNormal];

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SJTabButton.h"
 
+typedef void (^Sj_tabRemoveEventBlock)();
+
 @interface UIButton (SJTab)
 
 @property (nonatomic ,strong ,readonly) SJTabButton *numTab;
@@ -30,6 +32,9 @@
 
 /** 标签字体色 */
 @property (nonatomic ,retain) UIColor * sj_numColor;
+
+/**移除回调*/
+@property (nonatomic ,copy) Sj_tabRemoveEventBlock sj_tabRemoveEventBlock;
 
 
 @end

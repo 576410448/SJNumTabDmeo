@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "SJTabButton.h"
 
+typedef void (^Sj_tabRemoveEventBlock)();
+
 @interface UIView (SJTab)
 
 @property (nonatomic ,strong ,readonly) SJTabButton *numTab;
+
+/**移除回调*/
+@property (nonatomic ,copy) Sj_tabRemoveEventBlock sj_tabRemoveEventBlock;
 
 /** 标签是否支持操作 */
 @property (nonatomic ,readwrite) BOOL sj_tabUserInteractionEnabled;

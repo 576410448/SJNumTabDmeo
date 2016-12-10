@@ -40,6 +40,16 @@ static const void *backColorKey = &backColorKey;
 static const void *numColorKey = &numColorKey;
 static const void *numTabKey = &numTabKey;
 static const void *numTabStrKey = &numTabStrKey;
+static const void *tabRemoveEventKey = &tabRemoveEventKey;
+
+#pragma mark - 移除回调
+- (Sj_tabRemoveEventBlock)sj_tabRemoveEventBlock {
+    return objc_getAssociatedObject(self, tabRemoveEventKey);
+}
+
+- (void)setSj_tabRemoveEventBlock:(Sj_tabRemoveEventBlock)sj_tabRemoveEventBlock {
+    objc_setAssociatedObject(self, tabRemoveEventKey, sj_tabRemoveEventBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
 
 #pragma mark - 支持用户操作
 - (BOOL)sj_tabUserInteractionEnabled{
@@ -149,6 +159,10 @@ static const void *numTabStrKey = &numTabStrKey;
         @SJWeakObj(self);
         [self.numTab setKillBlock:^{
             [sjWeakself removeTab];
+            
+            if (sjWeakself.sj_tabRemoveEventBlock) {
+                sjWeakself.sj_tabRemoveEventBlock();
+            }
         }];
         
         [self addSubview:self.numTab];
